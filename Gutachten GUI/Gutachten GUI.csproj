@@ -68,6 +68,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Errors.cs" />
+    <Compile Include="files\lib\system\crayfire.cs" />
+    <Compile Include="files\lib\system\database\Database.cs" />
+    <Compile Include="files\lib\system\database\MSSQLDatabase.class.cs" />
+    <Compile Include="files\lib\system\database\MySQLDatabase.class.cs" />
     <Compile Include="MSSQL.cs" />
     <Compile Include="MySQL.cs" />
     <Compile Include="Tabs.cs" />
@@ -117,6 +121,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\yamaha.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="files\lib\system\exception\" />
+    <Folder Include="files\lib\system\exporter\" />
+    <Folder Include="files\lib\system\image\" />
+    <Folder Include="files\lib\system\importer\" />
+    <Folder Include="files\lib\system\user\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
