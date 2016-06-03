@@ -1,0 +1,62 @@
+﻿using System;
+using System.IO;
+using System.Windows;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+
+/* CHANGELOG
+   23.09.2015 - Version 0.1 - Initiale Version - T.M.   
+   
+   To - Do 
+   - Von welchem User kam der Error? 
+
+    */
+namespace Gutachten_GUI
+{
+    class Errors
+    {
+        private static string LogPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\thobas\\Logs\\";
+        private static string LogFile = LogPath + "Erros.txt";
+
+        public void WriteToLog(Exception ex)
+        {         
+            if (!Directory.Exists(LogPath))
+            {
+                try { Directory.CreateDirectory(LogPath); }
+                catch (Exception e) { MessageBox.Show(e.ToString()); }
+            }
+            if ( !File.Exists(LogFile))
+            {
+                try { File.CreateText(LogFile); }
+                catch (Exception e) { MessageBox.Show(e.ToString()); }
+            }
+            // Streamwriter schreibt mit True automatisch die Datei fort
+            StreamWriter StreamWriter = new StreamWriter(LogFile, true);
+            try { ex.ToString(); }
+            catch (Exception e) { MessageBox.Show(e.ToString()); }
+
+            try
+            {
+                StreamWriter.WriteLine(System.DateTime.Now.ToString() + "\t \t " + ex + " \n");
+                StreamWriter.Close();
+            }
+            catch (Exception e) { MessageBox.Show(e.ToString()); }
+
+
+        }
+
+        public void Debug_WritetoLog(String ex)
+        {
+            /* WARNING : This Method is only used for Debugging purposes!!! it has NO ERROR Handlig !! 
+               USE WITH CAUTION   -   USE WITH CAUTION  -  USE WITH CAUTION  -  USE WITH CAUTION
+            */
+            StreamWriter StreamWriter = new StreamWriter(LogFile, true);
+
+            StreamWriter.WriteLine(System.DateTime.Now.ToString() + "\t \t " + ex + " \n ");
+            StreamWriter.Close();
+            
+        }
+    }
+}

@@ -1,0 +1,246 @@
+﻿<Fluent:RibbonWindow x:Class="Gutachten_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+        Title="MainWindow" Height="1077" Width="1920" MinHeight="500" MinWidth="750">
+    <!--    xmlns:local="clr-namespace:Gutachten_GUI" -->
+    <!-- 
+    Some Information
+    
+    Blau Farcode : #FF2B579A des Backstage Ribbon
+    
+    -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Fluent:Ribbon FontSize="14.667">
+            <!--Backstage-->
+            <Fluent:Ribbon.Menu>
+                <Fluent:Backstage>
+                    <Fluent:BackstageTabControl Name="BackstageMenu" FontSize="14.667">
+                        <Fluent:BackstageTabItem Header="New"/>
+                        <Fluent:BackstageTabItem Header="Print"/>
+                        <Fluent:Button Header="Blue" Icon="Images\Blue.png"/>
+                        <Fluent:Button Header="Test für die Länge"/>
+                        <Fluent:SeparatorTabItem/>
+                        <Fluent:BackstageTabItem Header="Kunden">
+                            <Grid Margin="50" MinWidth="0" Width="Auto" HorizontalAlignment="Left">
+                                <!-- 12 Reihen -->
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <!-- 3 Spalten -->
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock HorizontalAlignment="Left" MinWidth="0" TextWrapping="Wrap" Foreground="#FF2B579A" FontSize="18.667" >Neuen Kunden anlegen</TextBlock>
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30"  Grid.Row="1">Anrede</Label>
+                                <Fluent:ComboBox VerticalAlignment="Top" HorizontalAlignment="Right" Width="200" Height="28" Grid.Row="1" Grid.Column="1">
+                                    <TextBlock Foreground="Black" Text="Herr" />
+                                    <TextBlock Foreground="Black" Text="Frau" />
+                                    <TextBlock Foreground="Black" Text="Firma" />
+                                </Fluent:ComboBox>
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30"  Grid.Row="2">Vorname</Label>
+                                <Fluent:TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Height="30"  Grid.Row="2" Grid.Column="1" TextAlignment="Center" />
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30" Grid.Row="3">Name</Label>
+                                <Fluent:TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Grid.Row="3" Grid.Column="1" TextAlignment="Center" />
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30" Grid.Row="4">Geburtsdatum</Label>
+                                <Fluent:TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Grid.Row="4" Grid.Column="1" TextAlignment="Center" />
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30" Grid.Row="5">Straße</Label>
+                                <Fluent:TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Grid.Row="5" Grid.Column="1" TextAlignment="Center" />
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30" Grid.Row="6">Ort</Label>
+                                <Fluent:TextBox VerticalAlignment="Top" HorizontalAlignment="Left" MinWidth="200" Grid.Row="6" Grid.Column="1" MaxLength="70" TextAlignment="Center" />
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30" Grid.Row="7">PLZ</Label>
+                                <Fluent:TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Grid.Row="7" Grid.Column="1" MaxLength="5" TextAlignment="Center"  />
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30" Grid.Row="8">Telefon</Label>
+                                <Fluent:TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Grid.Row="8" Grid.Column="1" TextAlignment="Center" />
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30" Grid.Row="9">Handy</Label>
+                                <Fluent:TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Grid.Row="9" Grid.Column="1"  TextAlignment="Center" />
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30" Grid.Row="10">E-mail</Label>
+                                <Fluent:TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Grid.Row="10" Grid.Column="1"  TextAlignment="Center" />
+
+                                <Label VerticalAlignment="Top" HorizontalAlignment="Left"  Width="150" Height="30" Grid.Row="11">???</Label>
+                                <Fluent:TextBox VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Grid.Row="11" Grid.Column="1"  TextAlignment="Center" />
+
+                                <Fluent:Button  IsDefinitive="True" IsEnabled="True" 
+                                                Style="{DynamicResource ButtonBackstageStyle}"  
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Bottom"
+                                                MinWidth="300"
+                                                Header="Speichern" 
+                                                Grid.Row="12" Grid.Column="2">
+                                </Fluent:Button>
+                            </Grid>
+                        </Fluent:BackstageTabItem>
+
+                        <Fluent:SeparatorTabItem/>
+                        <Fluent:Button Name="Exit" Header="Beenden" Click="Exit_Click"/>
+                    </Fluent:BackstageTabControl>
+                </Fluent:Backstage>
+            </Fluent:Ribbon.Menu>
+            <!--Quick Access Toolbar Items-->
+            <Fluent:Ribbon.QuickAccessItems>
+                <!--Use Content or Target Property to set QAT item-->
+                <Fluent:QuickAccessMenuItem IsChecked="true">
+                    <Fluent:Button Header="Pink" Icon="Images\Pink.png" />
+                </Fluent:QuickAccessMenuItem>
+                <!--You Can Just Bind with Any Control-->
+                <Fluent:QuickAccessMenuItem Target="{Binding ElementName=buttonGreen}"/>
+            </Fluent:Ribbon.QuickAccessItems>
+
+            <!--Tabs-->
+            <Fluent:RibbonTabItem Header="Gutachten">
+                <Fluent:RibbonGroupBox Header="Neues Gutachten" Height="84" Width="Auto">
+                    <Fluent:Button x:Name="buttonGreen" Header="Neu" Icon="Images\Green.png" Click="buttonGreen_Click"/>
+                    <Fluent:Button x:Name="Klick" Header="Klick"  Height="84" Width="106" Click="Klick_Click"/>
+                    <Fluent:Button x:Name="Visible" Header="Anzeigen" Click="Visible_Click"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Kunden">
+                <Fluent:RibbonGroupBox Header="Neuer Kunde" Height="84" Width="106">
+                    <Fluent:Button x:Name="buttonKunde" Header="Neu"
+                		Icon="Images\Green.png"
+                		LargeIcon="Images\GreenLarge.png" Width="106" />
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Autos">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Name="SubMenu" Header="Sub Menu"></Fluent:Button>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Verwaltung">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Name="Btn_CreateXML" Header="Create XML" Click="Btn_CreateXML_Click"></Fluent:Button>
+                    <Fluent:Button Name="Btn_LoadXML" Header="Load XML" Click="Btn_LoadXML_Click"></Fluent:Button>
+                    <Fluent:Button Name="Btn_ErrorTest" Header="ErrorTest" Click="Btn_ErrorTest_Click"></Fluent:Button>
+                </Fluent:RibbonGroupBox>
+
+            </Fluent:RibbonTabItem>
+        </Fluent:Ribbon>
+
+        <TabControl x:Name="MainTabControl" Grid.Row="1">
+            <!-- Page Home -->
+            <TabItem Name="Home" Header="Home">
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200px"/>
+                        <RowDefinition Height="500px"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1920px"/>
+                        <ColumnDefinition Width="Auto" MaxWidth="960"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Fluent:TwoLineLabel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,50,50" Text="Herzlich Willkommen Sebastian Heldt" FontSize="36" FontWeight="Thin" Foreground="#FF2B579A" FontFamily="Calibri"/>
+                    <GroupBox Content="Persöhnliche Statistik" Grid.Row="1" Grid.Column="0" Margin="10,0,958,218"/>
+                    <GroupBox Content="Gesamte Statistik" Grid.Row="1" Margin="967,0,24,218"/>
+                    <GroupBox Content="Zuletzt verwendet ... " Grid.Row="1" Grid.Column="0" Margin="10,288,24,-140" Grid.RowSpan="2"/>
+                </Grid>
+            </TabItem>
+            <!-- Page 1 -->
+            <TabItem Name="PHV503" Header="Gutachten - PHV503" Visibility="Visible">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" MinHeight="35" />
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="187*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="280" />
+                        <ColumnDefinition Width="Auto" MinWidth="400" />
+                        <ColumnDefinition Width="90" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Stack Panel?-->
+                    
+                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Source="/images/yamaha.jpg" Margin="3,20,8,0" Grid.Row="0" Grid.Column="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="0" Grid.Column="0" Content="Gutachten - PHV503" Grid.ColumnSpan="2" Panel.ZIndex="1" />
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="0" Grid.Column="0" Content="Sachverständige: Sebastian Heldt" Grid.ColumnSpan="2" Panel.ZIndex="1" Margin="0,35,0,0" />
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="0" Grid.Column="0" Content="Aufnahme: 25.08.2015 - 16:50 Uhr" Grid.ColumnSpan="2" Panel.ZIndex="1" Margin="0,65,0,0" />
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="1" Grid.Column="0" Content="Amtl. Kennzeichen" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="2" Grid.Column="0" Content="Fahrzeugart" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="3" Grid.Column="0" Content="Aufbau" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="4" Grid.Column="0" Content="Hersteller" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="5" Grid.Column="0" Content="Modell/Typ" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="6" Grid.Column="0" Content="Schlüsselnummer" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="7" Grid.Column="0" Content="Fahrgestellnummer" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="8" Grid.Column="0" Content="Antrieb" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="9" Grid.Column="0" Content="Leistung(kW)/Hubraum (cm³)" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="10" Grid.Column="0" Content="Hauptuntersuchung/Sicherheitsprüfung" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="11" Grid.Column="0" Content="Tachostand/Gesamtlaufleistung" Grid.ColumnSpan="2"/>
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="12" Grid.Column="0" Content="Vorbesitzer" Grid.ColumnSpan="2"/>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="1" Grid.Column="1" TextAlignment="Center" >B-QA164</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="2" Grid.Column="1" TextAlignment="Center" >Motorrad</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="3" Grid.Column="1" TextAlignment="Center" >keiner</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="4" Grid.Column="1" TextAlignment="Center" >Yamaha</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="5" Grid.Column="1" TextAlignment="Center" >FZ6 Fazer S2</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="6" Grid.Column="1" TextAlignment="Center" >7101/AAU000034</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="7" Grid.Column="1" TextAlignment="Center" >JYARJ142000010952</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="8" Grid.Column="1" TextAlignment="Center" >Hinterrad</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="9" Grid.Column="1" TextAlignment="Center" >72KW / 599ccm³</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="10" Grid.Column="1" TextAlignment="Center" >06.2017</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="11" Grid.Column="1" TextAlignment="Center" >15287 km</Fluent:TextBox>
+                    <Fluent:TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="300" Height="30"  Grid.Row="12" Grid.Column="1" TextAlignment="Center" >1</Fluent:TextBox>
+                    <Fluent:Button VerticalAlignment="Top" Width="150" Height="30"  Grid.Row="7" Grid.Column="2" Header="Prüfen" Foreground="Black" Margin="10,0,-219,0" HorizontalAlignment="Left"  Content="Prüfen" />
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <Fluent:StatusBar HorizontalAlignment="Stretch"
+                          VerticalAlignment="Bottom"						  
+                          Visibility="{Binding IsChecked, ElementName=IsStatusBarVisibleCheckBox, Converter={StaticResource boolToVisibilityConverter}}"
+                          Grid.Row="2">
+            <Fluent:StatusBarItem Title="Test" Value="300" HorizontalAlignment="Left">
+                <TextBlock Name="Statusbar_Left" Text="150 px" FontSize="13.333" Foreground="White"/>
+            </Fluent:StatusBarItem>
+            <Separator HorizontalAlignment="Left" />
+        </Fluent:StatusBar>
+
+    </Grid>
+</Fluent:RibbonWindow>

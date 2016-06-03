@@ -1,0 +1,134 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using Fluent;
+using System.IO;
+using System.Reflection;
+using System.Xml;
+
+/*
+CHANGELOG
+
+TO-DO
+
+    - ballonTip fürs Errors als Debug ( Title: Error bei Application Error : Details Short Error Message) 
+
+    */
+
+
+namespace Gutachten_GUI
+{
+    /// <summary>
+    /// Interaktionslogik für MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Fluent.RibbonWindow
+    {
+        XMLFiles XMLFiles = new XMLFiles();
+        Tabs Tabs = new Tabs();
+        Errors Erros = new Errors();
+        public MainWindow()
+        {
+            InitializeComponent();
+            /// Fenster Maximiert starten lassen...
+            Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            if (!XMLFiles.XML()) { XMLFiles.CreateXML(); }
+            
+        }
+
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Klick_Click(object sender, RoutedEventArgs e)
+        {
+            Statusbar_Left.Text = "Gutachten - PHV503 - B-QA164";
+        }
+
+        private void buttonGreen_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem tempTab = new TabItem();
+            tempTab = newTab();
+            MainTabControl.Items.Add(tempTab);
+            MainTabControl.SelectedItem = tempTab;
+        }
+        private TabItem newTab()
+        {
+            Random Rnd = new Random();
+            int RndNr1 = Rnd.Next(9999);
+            TabItem neuerTab = new TabItem();
+            neuerTab.Name = "Tab" + RndNr1.ToString();
+            neuerTab.Header = "Tab" + RndNr1.ToString();
+            return neuerTab;
+        }
+
+        private void Visible_Click(object sender, RoutedEventArgs e)
+        {
+            if (PHV503.IsVisible)
+            {
+                PHV503.Visibility = System.Windows.Visibility.Hidden;
+                MainTabControl.SelectedItem = Home;
+            }
+
+            else
+            {
+                PHV503.Visibility = System.Windows.Visibility.Visible;
+                MainTabControl.SelectedItem = PHV503;
+            }
+        }
+
+        private void Btn_CreateXML_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)+ "\\Blubber\\" );
+            XMLFiles.CreateXML();
+        }
+
+        private void Btn_LoadXML_Click(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\thobas\\TabConfig.xml"))
+            {
+                try {
+                    XmlDocument TabConfig = new XmlDocument();
+                    var Pfad = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\thobas\\TabConfig2.xml";
+                    TabConfig.Load(Pfad);
+                    //Root Knoten in ein XmlElement laden
+                    XmlElement root = TabConfig.DocumentElement;
+                    //Für jedes XML Element aus dem Root Knoten die Schleife ausführen
+                    foreach (XmlNode First in root.ChildNodes)
+                    {
+                      //  Console.WriteLine(TabConfiguration.Attributes["First"].InnerText);  //Wert des Attributs "Name" auf der Konsole ausgeben
+                      //  Console.WriteLine(TabConfiguration.Attributes["Second"].InnerText);    //Wert des Attributs "ID" auf der Konsole ausgeben
+                        MessageBox.Show(First.InnerText);                     //Text des Unterknotens auf der Konsole ausgeben
+                    }
+                }
+                catch (Exception ex) { Erros.WriteToLog(ex);}
+            }
+            else
+            {
+                XMLFiles.CreateXML();
+            }
+        }
+
+        private void Btn_ErrorTest_Click(object sender, RoutedEventArgs e)
+        {
+            Erros.Debug_WritetoLog("Error 1");
+        }
+    }
+}
