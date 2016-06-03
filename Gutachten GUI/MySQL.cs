@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
 
-/*
+/* CHANGELOG
+ * 
  Hauptklasse für MySQL Verbindung für Programm.
     */
 namespace Gutachten_GUI
