@@ -9,5 +9,14 @@ namespace Gutachten_GUI.files.lib.system.database
 {
     class MySQLDatabase  : Database
     {
+
+        public void connect()
+        {
+            if (this.port == 0) this.port = 3306; // mysql default port
+
+        }
+
+
+
     }
 }

@@ -7,7 +7,16 @@ using Gutachten_GUI.files.lib.system.database;
 
 namespace Gutachten_GUI.files.lib.system.database
 {
-    class MySQLDatabase  : Database
+    class MSSQLDatabase  : Database
     {
+
+        public void connect()
+        {
+            if (this.port == 0) this.port = 1433; // mssql default port
+
+        }
+
+
+
     }
 }

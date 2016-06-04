@@ -51,5 +51,33 @@ namespace Gutachten_GUI.files.lib.system.database
     	 * @var	integer
     	 */
     	protected int queryCount = 0;
+
+
+        /**
+         * Creates a Dabatase Object.
+         * 
+         * @param	string		$host			SQL database server host address
+         * @param	string		$user			SQL database server username
+         * @param	string		$password		SQL database server password
+         * @param	string		$database		SQL database server database name
+         * @param	integer		$port			SQL database server port
+         */
+        public Database(string host, string user, string password, string database, int port, bool failsafeTest = false)
+        {
+		this.host = host;
+		this.port = port;
+		this.user = user;
+		this.password = password;
+		this.database = database;
+		this.failsafeTest = failsafeTest;
+		
+		// connect database
+		this.connect();
+        }
+
+        /**
+         * Connects to database server.
+         */
+        abstract public void connect();
     }
 }
