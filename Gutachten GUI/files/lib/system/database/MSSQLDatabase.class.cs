@@ -4,19 +4,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Gutachten_GUI.files.lib.system.database;
+using System.Data.SqlClient;
 
 namespace Gutachten_GUI.files.lib.system.database
 {
     class MSSQLDatabase  : Database
     {
 
-        public void connect()
+        protected SqlConnection connection = null;
+
+
+        public MSSQLDatabase(string host, string user, string password, string database, int port, bool failsafeTest = false) : base(host, user, password, database, port, failsafeTest)
         {
-            if (this.port == 0) this.port = 1433; // mssql default port
+        }
+        ~MSSQLDatabase()
+        {
+            this.connection.Close();
+        }
+        public override void connect()
+        {
+            if (this.port == 0) this.port = 1443; // mysql default port
+            try
+            {
+                this.connection = new SqlConnection("server=" + this.host + ";user=" + this.user + ";database=" + this.database + ";port=" + this.port + ";password=" + this.password + ";");
+                this.connection.Open();
+            }
+            catch (SqlException e)
+            {
+                throw new DatabaseException("Connecting to MySQL server '" + this.host + "' failed:\n" + e.Message, this);
+            }
 
         }
 
+        public override void execute()
+        {
+            throw new NotImplementedException();
+        }
 
+        public override string getErrorDesc()
+        {
+            throw new NotImplementedException();
+        }
 
+        public override int getErrorNumber()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string getVersion()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

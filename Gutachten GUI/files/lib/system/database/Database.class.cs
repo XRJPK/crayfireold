@@ -79,5 +79,54 @@ namespace Gutachten_GUI.files.lib.system.database
          * Connects to database server.
          */
         abstract public void connect();
+
+
+        /**
+         * Gets the current database type.
+         * 
+         * @return	string
+         */
+        public string getDBType()
+        {
+            //return nameof(Database);
+            return this.GetType().Name;
+        }
+
+        /**
+         * Gets the sql version.
+         * 
+         * @return	string
+         */
+        abstract public string getVersion();
+        /**
+         * execute the sql query.
+         * 
+         */
+        abstract public void execute();
+
+        /**
+         * Returns the number of the last error.
+         * 
+         * @return	integer
+         */
+        abstract public int getErrorNumber();
+
+        /**
+         * Returns the description of the last error.
+         * 
+         * @return	string
+         */
+        abstract public string getErrorDesc();
+
+        /**
+         * Increments the query counter by one.
+         */
+        public void incrementQueryCount()
+        {
+		this.queryCount++;
+        }
+
+
+
     }
 }

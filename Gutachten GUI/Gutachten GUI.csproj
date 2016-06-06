@@ -39,10 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Fluent">
-      <HintPath>..\..\_Other\Fluent.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Windows.Shell">
-      <HintPath>..\..\_Other\Microsoft.Windows.Shell.dll</HintPath>
+      <HintPath>files\lib\Fluent.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -69,9 +66,14 @@
     </ApplicationDefinition>
     <Compile Include="Errors.cs" />
     <Compile Include="files\lib\system\crayfire.cs" />
-    <Compile Include="files\lib\system\database\Database.cs" />
+    <Compile Include="files\lib\system\database\Database.class.cs" />
+    <Compile Include="files\lib\system\database\DatabaseException.class.cs" />
     <Compile Include="files\lib\system\database\MSSQLDatabase.class.cs" />
     <Compile Include="files\lib\system\database\MySQLDatabase.class.cs" />
+    <Compile Include="files\lib\system\database\PostgreSQLDatabase.class.cs" />
+    <Compile Include="files\lib\system\exception\IPrintableException.class.cs" />
+    <Compile Include="files\lib\system\exception\LoggedException.class.cs" />
+    <Compile Include="files\lib\system\exception\SystemException.class.cs" />
     <Compile Include="MSSQL.cs" />
     <Compile Include="MySQL.cs" />
     <Compile Include="Tabs.cs" />
@@ -123,11 +125,9 @@
     <Resource Include="images\yamaha.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="files\lib\system\exception\" />
-    <Folder Include="files\lib\system\exporter\" />
     <Folder Include="files\lib\system\image\" />
     <Folder Include="files\lib\system\importer\" />
-    <Folder Include="files\lib\system\user\" />
+    <Folder Include="files\lib\system\user\authentication\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
