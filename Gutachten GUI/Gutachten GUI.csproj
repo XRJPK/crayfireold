@@ -38,6 +38,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ControlzEx">
+      <HintPath>files\lib\ControlzEx.dll</HintPath>
+    </Reference>
     <Reference Include="Fluent">
       <HintPath>files\lib\Fluent.dll</HintPath>
     </Reference>
