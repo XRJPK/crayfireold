@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace Gutachten_GUI.files.lib.system.database
+namespace crayfire.database
 {
     class MySQLDatabase  : Database
     {
@@ -14,7 +14,17 @@ namespace Gutachten_GUI.files.lib.system.database
 
         public MySQLDatabase(string host, string user, string password, string database, int port, bool failsafeTest = false) : base(host, user, password, database, port, failsafeTest)
         {
+            this.host = host;
+            this.port = port;
+            this.user = user;
+            this.password = password;
+            this.database = database;
+            this.failsafeTest = failsafeTest;
+
+            // connect database
+            this.connect();
         }
+
         ~MySQLDatabase()
         {
             this.connection.Close();

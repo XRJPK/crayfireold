@@ -17,6 +17,7 @@ using Fluent;
 using System.IO;
 using System.Reflection;
 using System.Xml;
+using crayfire;
 
 /*
 CHANGELOG
@@ -49,6 +50,7 @@ namespace Gutachten_GUI
 
         public MainWindow()
         {
+            crayfire.crayfire.getDB();
             InitializeComponent();
             /// Fenster Maximiert starten lassen...
             Application.Current.MainWindow.WindowState = WindowState.Maximized;

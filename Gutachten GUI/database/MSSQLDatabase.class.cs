@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Gutachten_GUI.files.lib.system.database;
+using crayfire.database;
 using System.Data.SqlClient;
 
-namespace Gutachten_GUI.files.lib.system.database
+namespace crayfire.database
 {
     class MSSQLDatabase  : Database
     {

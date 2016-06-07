@@ -5,14 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Gutachten_GUI.files.lib.system.database;
+using crayfire.database;
 
-namespace Gutachten_GUI.files.lib.system
+namespace crayfire
 {
     class crayfire
     {
 
-        /**         * database object         * @var	\wcf\system\database\Database         */
+        /**         * database object         * @var	\lib\system\database\Database         */
 
         protected static Database dbObj = null;
 
@@ -25,11 +25,10 @@ namespace Gutachten_GUI.files.lib.system
         protected void initDB()
         {
             // get configuration
-
-            string dbHost = "";
-            string dbUser = "";
-            string dbPassword = "";
-            string dbName = "";
+            string dbHost = "srv02.getpoint.de";
+            string dbUser = "Gutachten";
+            string dbPassword = "dyzVSB29!";
+            string dbName = "KfzGutachten";
             int dbPort = 0;
 
             // create database connection
@@ -37,8 +36,16 @@ namespace Gutachten_GUI.files.lib.system
             crayfire.dbObj = new MySQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
            // crayfire.dbObj = new MSSQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
 
+        }
 
+        /**         * Returns the database object.
+         * 
+         * @return	\lib\system\database\Database
+         */
 
+        public static  Database getDB()
+        {
+            return crayfire.dbObj;
         }
 
         /**         * Returns true if benchmarking is enabled, otherwise false.         * 

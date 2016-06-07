@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Gutachten_GUI.files.lib.system.exception;
+using crayfire.exception;
 
-namespace Gutachten_GUI.files.lib.system.database
+namespace crayfire.database
 {
     class DatabaseException : exception.SystemException
     {

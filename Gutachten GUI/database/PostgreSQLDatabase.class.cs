@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace Gutachten_GUI.files.lib.system.exception
+namespace crayfire.database
 {
-    class LoggedException : System.Exception
+    class PostgreSQLDatabase
     {
     }
 }
