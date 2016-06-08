@@ -129,7 +129,7 @@ namespace crayfire.database
 			this.information+= "sql query: "+this.sqlQuery + "\r\n";
 
             System.Windows.MessageBox.Show(this.information);
-            //parent::show();
+            show();
     }
 }
 }

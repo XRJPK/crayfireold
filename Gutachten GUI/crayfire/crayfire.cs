@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using crayfire.database;
+using System.Windows;
 
 namespace crayfire
 {
@@ -24,17 +25,19 @@ namespace crayfire
 
         protected void initDB()
         {
+
             // get configuration
-            string dbHost = "srv02.getpoint.de";
-            string dbUser = "Gutachten";
+            string dbHost = "srv01.getpoint.de";
+           // string dbUser = "Gutachten";
+            string dbUser = "hkjhkhkkhk";
             string dbPassword = "dyzVSB29!";
             string dbName = "KfzGutachten";
             int dbPort = 0;
 
             // create database connection
-
             crayfire.dbObj = new MySQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
-           // crayfire.dbObj = new MSSQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
+            // crayfire.dbObj = new MSSQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
+
 
         }
 

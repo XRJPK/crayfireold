@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace crayfire.exception
 {
-    class SystemException : Exception
+    class SystemException : LoggedException, IPrintableException
     {
 
         /**
@@ -23,9 +23,14 @@ namespace crayfire.exception
 
 
 
-         public SystemException(string message = "", int code = 0, string description = "", Exception e=null)
+         public SystemException(string message = "", int code = 0, string description = "", Exception e = null)
         {
          
+        }
+
+        public void show()
+        {
+            throw new NotImplementedException();
         }
     }
 }

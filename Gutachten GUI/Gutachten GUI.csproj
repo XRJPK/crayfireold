@@ -68,15 +68,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Errors.cs" />
-    <Compile Include="crayfire.cs" />
-    <Compile Include="database\Database.class.cs" />
-    <Compile Include="database\DatabaseException.class.cs" />
-    <Compile Include="database\MSSQLDatabase.class.cs" />
-    <Compile Include="database\MySQLDatabase.class.cs" />
-    <Compile Include="database\PostgreSQLDatabase.class.cs" />
-    <Compile Include="exception\IPrintableException.class.cs" />
-    <Compile Include="exception\LoggedException.class.cs" />
-    <Compile Include="exception\SystemException.class.cs" />
+    <Compile Include="crayfire\crayfire.cs" />
+    <Compile Include="crayfire\database\Database.class.cs" />
+    <Compile Include="crayfire\database\DatabaseException.class.cs" />
+    <Compile Include="crayfire\database\MSSQLDatabase.class.cs" />
+    <Compile Include="crayfire\database\MySQLDatabase.class.cs" />
+    <Compile Include="crayfire\database\PostgreSQLDatabase.class.cs" />
+    <Compile Include="crayfire\exception\IPrintableException.class.cs" />
+    <Compile Include="crayfire\exception\LoggedException.class.cs" />
+    <Compile Include="crayfire\exception\SystemException.class.cs" />
     <Compile Include="MSSQL.cs" />
     <Compile Include="MySQL.cs" />
     <Compile Include="Tabs.cs" />
@@ -128,9 +128,9 @@
     <Resource Include="images\yamaha.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="image\" />
-    <Folder Include="importer\" />
-    <Folder Include="user\authentication\" />
+    <Folder Include="crayfire\image\" />
+    <Folder Include="crayfire\importer\" />
+    <Folder Include="crayfire\user\authentication\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

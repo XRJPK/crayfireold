@@ -50,7 +50,8 @@ namespace Gutachten_GUI
 
         public MainWindow()
         {
-            crayfire.crayfire.getDB();
+            new crayfire.crayfire();
+            //crayfire.crayfire.getDB();
             InitializeComponent();
             /// Fenster Maximiert starten lassen...
             Application.Current.MainWindow.WindowState = WindowState.Maximized;
