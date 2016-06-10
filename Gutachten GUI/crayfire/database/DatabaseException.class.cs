@@ -43,8 +43,14 @@ namespace crayfire.database
 	 * @var	\lib\system\database\Database
 	 */
 	protected Database db = null;
-	
-	
+
+    /**
+    * SQL query if prepare() failed
+    * @var	string
+    */
+    protected string message = "";
+
+
 	/**
 	 * SQL query if prepare() failed
 	 * @var	string
@@ -67,6 +73,7 @@ namespace crayfire.database
 
 		this.errorNumber = this.db.getErrorNumber();
 		this.errorDesc = this.db.getErrorDesc();
+        this.message = message;
 
         // new exception.SystemException(message, this.errorNumber);
     }
@@ -99,13 +106,13 @@ namespace crayfire.database
     public string getSQLVersion()
     {
         if (this.sqlVersion == null) {
-            try
-            {
-				this.sqlVersion = this.db.getVersion();
-            }
-            catch (DatabaseException) {
-				this.sqlVersion = "unknown";
-            }
+                try
+                {
+				    this.sqlVersion = this.db.getVersion();
+                }
+                catch (DatabaseException) {
+				    this.sqlVersion = "unknown";
+                }
             }
 
             return this.sqlVersion;
@@ -121,20 +128,26 @@ namespace crayfire.database
         return this.DBType;
     }
 
-    /**
-	 * Prints the error page.
-	 */
-    public void show()
-    {
-		this.information+="sql type: "+this.getDBType()+"\r\n";
-		this.information+="sql error: "+this.getErrorDesc()+"\r\n";
-        this.information+="sql error number: "+this.getErrorNumber() + "\r\n";
-        this.information+="sql version: "+this.getSQLVersion() + "\r\n";
+    public string getMessage()
+        {
+            return message;
+        }
 
-			this.information+= "sql query: "+this.sqlQuery + "\r\n";
+        /**
+         * Prints the error page.
+         */
+        public new void show()
+        {
+            this.information += "sql type: " + this.getDBType() + "\r\n";
+            this.information += "sql error: " + this.getErrorDesc() + "\r\n";
+            this.information += "sql error number: " + this.getErrorNumber() + "\r\n";
+            // this.information += "sql version: " + this.getSQLVersion() + "\r\n";
+
+            this.information += "sql query: " + this.sqlQuery + "\r\n";
+            this.information += "Message: " + message + "\r\n";
 
             System.Windows.MessageBox.Show(this.information);
-            show(); 
+            base.show();
+        }
     }
-}
 }

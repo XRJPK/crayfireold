@@ -13,7 +13,6 @@ namespace crayfire.database
     {
 
         protected  MySqlConnection connection = null;
-        Gutachten_GUI.Errors Errors = new Gutachten_GUI.Errors();
 
         public MySQLDatabase(string host, string user, string password, string database, int port, bool failsafeTest = false) : base(host, user, password, database, port, failsafeTest)
         {
@@ -52,10 +51,7 @@ namespace crayfire.database
             }
             catch (MySqlException e)
             {
-                // Errors.WriteToLog(e);
                 throw new DatabaseException("Connecting to MySQL server '" + this.host + "' failed:\n" + e.Message, this);
-                
-
             }
 
         }
@@ -67,7 +63,8 @@ namespace crayfire.database
 
         public override string getErrorDesc()
         {
-            return "xx";        }
+            return "";
+        }
 
         public override int getErrorNumber()
         {
@@ -76,7 +73,8 @@ namespace crayfire.database
 
         public override string getVersion()
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            return "";
         }
     }
 }

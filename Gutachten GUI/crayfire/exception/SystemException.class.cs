@@ -30,7 +30,7 @@ namespace crayfire.exception
 
         public void show()
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
     }
 }
