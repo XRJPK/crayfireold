@@ -45,7 +45,7 @@ namespace crayfire.database
 	protected Database db = null;
 
     /**
-    * SQL query if prepare() failed
+    * The direct Message of the root Exception
     * @var	string
     */
     protected string message = "";
