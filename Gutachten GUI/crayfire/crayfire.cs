@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using crayfire.database;
 using System.Windows;
+using crayfire.database;
 
 namespace crayfire
 {
@@ -35,9 +35,14 @@ namespace crayfire
             int dbPort = 0;
 
             // create database connection
-            crayfire.dbObj = new MySQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
-            // crayfire.dbObj = new MSSQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
+            try { 
 
+            dbObj = new MySQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
+                // crayfire.dbObj = new MSSQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
+            } catch (DatabaseException Ex)
+            {
+                MessageBox.Show(Ex.ToString());
+            }
 
         }
 

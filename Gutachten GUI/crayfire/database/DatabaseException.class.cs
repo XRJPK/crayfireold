@@ -7,6 +7,11 @@ using crayfire.exception;
 
 namespace crayfire.database
 {
+    /**
+     * TO-DO 
+     *  - public void show()  überschreibt die SystemException.show ? 
+     *  - Wieso ist die DatabaseException der database zugeornet? und nicht der exception? 
+     */
     class DatabaseException : exception.SystemException
     {
     /**
@@ -60,10 +65,10 @@ namespace crayfire.database
 		this.DBType = db.getDBType();
 		this.sqlQuery = sqlQuery;
 
-			this.errorNumber = this.db.getErrorNumber();
-			this.errorDesc = this.db.getErrorDesc();
+		this.errorNumber = this.db.getErrorNumber();
+		this.errorDesc = this.db.getErrorDesc();
 
-        new exception.SystemException(message, this.errorNumber);
+        // new exception.SystemException(message, this.errorNumber);
     }
 
     /**
@@ -129,7 +134,7 @@ namespace crayfire.database
 			this.information+= "sql query: "+this.sqlQuery + "\r\n";
 
             System.Windows.MessageBox.Show(this.information);
-            show();
+            show(); 
     }
 }
 }

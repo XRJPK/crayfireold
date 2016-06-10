@@ -13,6 +13,7 @@ namespace crayfire.database
     {
 
         protected  MySqlConnection connection = null;
+        Gutachten_GUI.Errors Errors = new Gutachten_GUI.Errors();
 
         public MySQLDatabase(string host, string user, string password, string database, int port, bool failsafeTest = false) : base(host, user, password, database, port, failsafeTest)
         {
@@ -23,15 +24,20 @@ namespace crayfire.database
             this.database = database;
             this.failsafeTest = failsafeTest;
             // connect database
+ 
             this.connect();
         }
 
-        ~MySQLDatabase()
+        ~MySQLDatabase() 
         {
-            this.connection.Close();
+            try
+            {
+                this.connection.Close();
+            }
+            catch { }
         }
 
-        public override void connect()
+        public override void connect() 
         {
             if (this.port == 0) this.port = 3306; // mysql default port
                 this.connection = new MySqlConnection("server=" + this.host + ";user=" + this.user + ";database=" + this.database + ";port=" + this.port + ";password=" + this.password + ";");
@@ -39,14 +45,17 @@ namespace crayfire.database
             {
                 this.connection.Open();
                 //create a MySQL connection with a query string
-                MySqlConnection connection = new MySqlConnection("server=localhost;database=cs;uid=root;password=abcdaaa");
+               // MySqlConnection connection = new MySqlConnection("server=localhost;database=cs;uid=root;password=abcdaaa");
 
                 //open the connection
-                connection.Open();
+                //connection.Open();
             }
             catch (MySqlException e)
             {
-                throw new DatabaseException("Connecting to MySQL server '"+this.host+"' failed:\n"+e.Message, this);
+                // Errors.WriteToLog(e);
+                throw new DatabaseException("Connecting to MySQL server '" + this.host + "' failed:\n" + e.Message, this);
+                
+
             }
 
         }
