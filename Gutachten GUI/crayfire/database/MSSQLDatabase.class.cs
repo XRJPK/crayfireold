@@ -31,7 +31,7 @@ namespace crayfire.database
             }
             catch (SqlException e)
             {
-                throw new DatabaseException("Connecting to MySQL server '" + this.host + "' failed:\n" + e.Message, this);
+                 new DatabaseException("Connecting to MSSQL server '" + this.host + "' failed:\n" + e.Message, this);
             }
 
         }
