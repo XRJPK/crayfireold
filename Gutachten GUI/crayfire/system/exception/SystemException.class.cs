@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace crayfire.exception
+namespace crayfire.system.exception
 {
     class SystemException : LoggedException, IPrintableException
     {

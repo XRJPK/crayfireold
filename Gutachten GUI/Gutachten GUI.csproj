@@ -73,16 +73,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="crayfire\database\DatabaseException.class.cs" />
+    <Compile Include="crayfire\data\user\User.class.cs" />
+    <Compile Include="crayfire\system\exception\DatabaseException.class.cs" />
+    <Compile Include="crayfire\user\authentication\IUserAuthentication.class.cs" />
     <Compile Include="Errors.cs" />
     <Compile Include="crayfire\crayfire.cs" />
-    <Compile Include="crayfire\database\Database.class.cs" />
-    <Compile Include="crayfire\database\MSSQLDatabase.class.cs" />
-    <Compile Include="crayfire\database\MySQLDatabase.class.cs" />
-    <Compile Include="crayfire\database\PostgreSQLDatabase.class.cs" />
-    <Compile Include="crayfire\exception\IPrintableException.class.cs" />
-    <Compile Include="crayfire\exception\LoggedException.class.cs" />
-    <Compile Include="crayfire\exception\SystemException.class.cs" />
+    <Compile Include="crayfire\system\database\Database.class.cs" />
+    <Compile Include="crayfire\system\database\MSSQLDatabase.class.cs" />
+    <Compile Include="crayfire\system\database\MySQLDatabase.class.cs" />
+    <Compile Include="crayfire\system\database\PostgreSQLDatabase.class.cs" />
+    <Compile Include="crayfire\system\exception\IPrintableException.class.cs" />
+    <Compile Include="crayfire\system\exception\LoggedException.class.cs" />
+    <Compile Include="crayfire\system\exception\SystemException.class.cs" />
     <Compile Include="MSSQL.cs" />
     <Compile Include="MySQL.cs" />
     <Compile Include="Tabs.cs" />
@@ -136,8 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="crayfire\image\" />
-    <Folder Include="crayfire\importer\" />
-    <Folder Include="crayfire\user\authentication\" />
+    <Folder Include="crayfire\system\importer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

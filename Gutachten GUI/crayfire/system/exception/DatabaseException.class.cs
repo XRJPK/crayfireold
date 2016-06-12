@@ -1,18 +1,18 @@
-﻿using System;
+﻿using crayfire.system.database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using crayfire.exception;
 
-namespace crayfire.database
+namespace crayfire.system.exception
 {
     /**
      * TO-DO 
      *  - public void show()  überschreibt die SystemException.show ? 
      *  - Wieso ist die DatabaseException der database zugeornet? und nicht der exception? 
      */
-    class DatabaseException : exception.SystemException
+    class DatabaseException : SystemException
     {
     /**
 	 * error number

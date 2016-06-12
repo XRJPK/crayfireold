@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows;
-using crayfire.exception;
+using crayfire.system.exception;
 
-namespace crayfire.database
+namespace crayfire.system.database
 {
     class MySQLDatabase  : Database
     {

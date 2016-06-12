@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using crayfire.database;
+using crayfire.system.exception;
 using System.Data.SqlClient;
 
-namespace crayfire.database
+namespace crayfire.system.database
 {
     class MSSQLDatabase  : Database
     {

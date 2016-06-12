@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace crayfire.exception
+namespace crayfire.data.user
 {
-    class LoggedException : System.Exception
+    class User
     {
     }
 }
