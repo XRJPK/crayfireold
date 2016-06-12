@@ -35,20 +35,9 @@ namespace crayfire
             int dbPort = 0;
 
             // create database connection
-            try
-            {
 
                 dbObj = new MySQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
-            }
-            catch (DatabaseException Ex)
-            {
-                MessageBox.Show(Ex.ToString());
-                Ex.show();
-            }
-            catch (Exception Ex2) when (Ex2 is NotImplementedException)
-            {
-                
-            }
+
 
         }
 
