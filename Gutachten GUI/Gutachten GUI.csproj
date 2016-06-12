@@ -73,9 +73,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="crayfire\data\database\DatabaseObject.class.cs" />
+    <Compile Include="crayfire\data\IStorableObject.class.cs" />
     <Compile Include="crayfire\data\user\User.class.cs" />
     <Compile Include="crayfire\system\exception\DatabaseException.class.cs" />
-    <Compile Include="crayfire\user\authentication\IUserAuthentication.class.cs" />
+    <Compile Include="crayfire\system\user\authentication\AbstractUserAuthentication.class.cs" />
+    <Compile Include="crayfire\system\user\authentication\DefaultUserAuthentication.class.cs" />
+    <Compile Include="crayfire\system\user\authentication\DomianUserAuthentication.class.cs" />
+    <Compile Include="crayfire\system\user\authentication\EmailUserAuthentication.class.cs" />
+    <Compile Include="crayfire\system\user\authentication\IUserAuthentication.class.cs" />
     <Compile Include="Errors.cs" />
     <Compile Include="crayfire\crayfire.cs" />
     <Compile Include="crayfire\system\database\Database.class.cs" />
