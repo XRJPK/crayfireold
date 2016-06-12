@@ -39,7 +39,6 @@ namespace crayfire
             {
 
                 dbObj = new MySQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
-                // crayfire.dbObj = new MSSQLDatabase(dbHost, dbUser, dbPassword, dbName, dbPort);
             }
             catch (DatabaseException Ex)
             {
