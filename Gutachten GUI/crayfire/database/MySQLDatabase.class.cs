@@ -43,15 +43,11 @@ namespace crayfire.database
             try
             {
                 this.connection.Open();
-                //create a MySQL connection with a query string
-               // MySqlConnection connection = new MySqlConnection("server=localhost;database=cs;uid=root;password=abcdaaa");
 
-                //open the connection
-                //connection.Open();
             }
             catch (MySqlException e)
             {
-                throw new DatabaseException("Connecting to MySQL server '" + this.host + "' failed:\n" + e.Message, this);
+                 new DatabaseException("Connecting to MySQL server '" + this.host + "' failed:\n" + e.Message, this);
             }
 
         }
